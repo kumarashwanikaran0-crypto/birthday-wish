@@ -1,0 +1,160 @@
+
+<!-- Include SweetAlert2 CDN in your HTML <head> -->
+<script src="https://jsdelivr.net"></script>
+
+<!-- Replace your standard alert() in JavaScript with this -->
+<script>
+Swal.fire({
+  title: 'Superb!',
+  text: 'Aapki Birthday Profile aur Wishes Save Ho Gayi Hain!',
+  icon: 'success',
+  confirmButtonColor: '#ff6f61' // Customize color to match your theme
+});
+</script>
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Special Entry</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+    h2 {
+      color: #ff4b2b;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+    input[type="date"], input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ff758c;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      outline: none;
+      font-size: 16px;
+    }
+    button {
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+    .blank-item {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+    .blank-item label {
+      font-weight: bold;
+      color: #333;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .avatar {
+      width: 90px;
+      height: 90px;
+      background: #ff758c;
+      color: white;
+      font-size: 40px;
+      line-height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STEP 1: Date Entry -->
+  <div id="step-date" class="card">
+    <h2>🎉 Enter Your Special Date</h2>
+    <p>Apna Birthday Select Karke Profile Unlock Karein!</p>
+    <input type="date" id="dobInput">
+    <br>
+    <button onclick="unlockProfile()">Open Profile ✨</button>
+  </div>
+
+  <!-- STEP 2: Birthday Profile & Blanks Options -->
+  <div id="step-profile" class="card hidden">
+    <div class="avatar">🎂</div>
+    <h2>Happy Birthday Profile! 🎉</h2>
+    <p>Aapke Birthday Wish & Plans Fill Karein:</p>
+
+    <div class="blank-item">
+      <label>1. Birthday Party Venue: 📍</label>
+      <input type="text" placeholder="Kahan party karni hai? (e.g., Cafe/Home)">
+    </div>
+
+    <div class="blank-item">
+      <label>2. Dream Birthday Gift: 🎁</label>
+      <input type="text" placeholder="Kya gift chahiye?">
+    </div>
+
+    <div class="blank-item">
+      <label>3. Favorite Cake Flavor: 🎂</label>
+      <input type="text" placeholder="Kaunsa cake katna hai?">
+    </div>
+
+    <div class="blank-item">
+      <label>4. Special Birthday Wish: ⭐</label>
+      <input type="text" placeholder="Ek secret wish...">
+    </div>
+
+    <button onclick="saveDetails()">Lock Wishes 🔒</button>
+  </div>
+
+  <script>
+    function unlockProfile() {
+      const dob = document.getElementById('dobInput').value;
+      if (!dob) {
+        alert('Kripya pehle birthday date select karein!');
+        return;
+      }
+      
+      document.getElementById('step-date').classList.add('hidden');
+      document.getElementById('step-profile').classList.remove('hidden');
+    }
+
+    function saveDetails() {
+      alert('🎉 Superb! Aapki Birthday Profile aur Wishes Save Ho Gayi Hain!');
+    }
+  </script>
+
+</body>
+</html>
